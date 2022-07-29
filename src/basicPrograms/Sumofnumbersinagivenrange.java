@@ -11,14 +11,27 @@ public class Sumofnumbersinagivenrange {
 		int start= sc.nextInt();
 		int end= sc.nextInt();
 		
-		int sum=0;
+      	int sum=0;
+      	
+      	
 		
-		for(int i=start;i<=end;i++) {
-			sum+=i;
-		}
+//		for(int i=start;i<=end;i++) {
+//			sum+=i;
+//		}
+//		System.out.println(sum);
+		sum= getsum(sum,start,end);
+		
 		System.out.println(sum);
 		
+		
 
+	}
+	
+	public static int getsum(int sum, int start, int end) {
+		if(start>end) {
+			return sum;
+		}
+		return start+getsum(sum,start+1,end);
 	}
 
 }
